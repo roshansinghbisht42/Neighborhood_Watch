@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}NeighborWatch - Community Safety App{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Keep Your Neighborhood Safe</h1>
+        <p>Report suspicious activity, get real-time alerts, and help make your community a safer place.</p>
+        <div class="hero-buttons">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('user.dashboard') }}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+            {% else %}
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="{{ url_for('auth.login') }}" class="btn btn-outline btn-lg">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2 class="section-title">How It Works</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">&#128680;</div>
+            <h3>Report Incidents</h3>
+            <p>Quickly report suspicious activity, crimes, or hazards with location and photo evidence.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128276;</div>
+            <h3>Real-Time Alerts</h3>
+            <p>Get instant notifications when incidents occur near your neighborhood.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128506;</div>
+            <h3>Track Response</h3>
+            <p>Follow up on your reports and see when authorities take action.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3>Safety Analytics</h3>
+            <p>View crime patterns, hotspot predictions, and safety trends in your area.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-number" id="stat-reports">--</span>
+            <span class="stat-label">Reports Filed</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="stat-resolved">--</span>
+            <span class="stat-label">Issues Resolved</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="stat-neighborhoods">--</span>
+            <span class="stat-label">Neighborhoods</span>
+        </div>
+    </div>
+</section>
+{% endblock %}
