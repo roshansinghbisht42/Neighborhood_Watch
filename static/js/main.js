@@ -31,9 +31,7 @@ socket.on('report_updated', (data) => {
     updateReportCard(data);
 });
 
-// ========================================
 // Toast Notifications
-// ========================================
 function showToast(title, message, type = 'info') {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -75,9 +73,8 @@ function playNotificationSound() {
     }
 }
 
-// ========================================
+
 // Live Feed Updates
-// ========================================
 function addToLiveFeed(data) {
     const feed = document.getElementById('liveFeed') || document.getElementById('activityList');
     if (!feed) return;
@@ -104,9 +101,7 @@ function addToLiveFeed(data) {
     setTimeout(() => item.classList.remove('activity-new'), 2000);
 }
 
-// ========================================
 // Report Card Updates
-// ========================================
 function updateReportCard(data) {
     const card = document.getElementById(`report-${data.id}`);
     if (!card) return;
@@ -124,9 +119,7 @@ function updateReportCard(data) {
     }
 }
 
-// ========================================
 // Navigation Toggle (Mobile)
-// ========================================
 function toggleNav() {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('show');
@@ -141,9 +134,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ========================================
 // Flash Message Auto-dismiss
-// ========================================
 document.addEventListener('DOMContentLoaded', () => {
     const flashes = document.querySelectorAll('.flash');
     flashes.forEach(flash => {
