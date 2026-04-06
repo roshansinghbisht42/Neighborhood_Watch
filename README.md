@@ -109,7 +109,6 @@ neighborhood-watch/
 ├── config.py               # Configuration settings
 ├── models.py               # MongoDB data models (User, Report)
 ├── requirements.txt        # Python dependencies
-├── .env                    # Environment variables (create this)
 ├── .gitignore              # Git ignore file
 │
 ├── routes/                 # Flask blueprints
